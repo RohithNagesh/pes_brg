@@ -67,14 +67,17 @@ Yosys can be adapted to perform any synthesis job by combining the existing pass
   show
   ```
   On running the above command we get the statistics about number of gates that are used, Logic realized using standard cells and also the netlist.
-  **Statistics**
+
+**Statistics**
 <p align="center">
-  Fig 3. Statistics
+  <img src="https://github.com/RohithNagesh/pes_brg/assets/103078929/6f0ad7ea-7e2a-4373-9f36-11048acba062"><br>
+  Fig 3. Statistics 
 </p>
 
-  **Logic realized**
+**Logic realized**
 <p align="center">
-  Fig 4. Logic Diagram
+  <img src="https://github.com/RohithNagesh/pes_brg/assets/103078929/03de3ec1-506c-4230-848b-407a0f4e106b"><br>
+  Fig 4. Logic Synthesis
 </p>
 
 ## Gate Level Simulation
