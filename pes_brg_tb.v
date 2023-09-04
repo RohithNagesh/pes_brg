@@ -12,7 +12,7 @@ module pes_brg_tb;
 	wire clkout;
 
 	// Instantiate the Unit Under Test (UUT)
-	iiitb_brg uut (.clk(clk), .reset(reset), .sel(sel),.clkout(clkout));
+	pes_brg uut (.clk(clk), .reset(reset), .sel(sel),.clkout(clkout));
 
 	initial begin
 	
@@ -35,8 +35,8 @@ module pes_brg_tb;
 		#200000 sel=sel+2'b01;
 		initial
 		begin
-			$dumpfile("iiitb_brg_out.vcd");
-          $dumpvars(0, iiitb_brg_tb);
+			$dumpfile("pes_brg_out.vcd");
+			$dumpvars(0, pes_brg_tb);
 	 end
 		
 endmodule
