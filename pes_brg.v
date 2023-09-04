@@ -1,7 +1,7 @@
 // Code your design here
 `timescale 100ps / 100ps
 
-module iiitb_brg( clk,reset,sel,clkout);
+module pes_brg( clk,reset,sel,clkout);
 	 
 input clk,reset;
 input [1:0]sel;
