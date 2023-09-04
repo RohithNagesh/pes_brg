@@ -4,7 +4,7 @@
 - [Working](#working)
 - [Functional Simulation](#functional-simulation)
 - [Synthesis](#synthesis)
-- [Gate Level Simulation (GLS)](#gate-level-simulation-(gls))
+- [Gate Level Simulation](#gate-level-simulation)
 
 ## Introduction
 The Baud rate generator is nothing but a frequency divider. It helps two devices in communicating with each other. When data is sent from transmitter to receiver then the data at the receiver side is sampled at a particular baud rate. If there is a high mismatch between the baud rate of transmitter and receiver then the sampling will not happen at the centre of the bit period and there will be an offset. Due to the offset, there will be information that will be missed and communication will not occur efficiently. For example, if transmitter transmit at a particular rate and the receiving device only expects half of that data rate then half of the information will be lost.
@@ -77,7 +77,7 @@ Yosys can be adapted to perform any synthesis job by combining the existing pass
   Fig 4. Logic Diagram
 </p>
 
-## Gate Level Simulation (GLS)
+## Gate Level Simulation
 GLS stands for Gate level Simulation. when we make an RTL design we test it with the help of test bench, which applies some stimulus. The output of that stimulus is checked for the desired functionality. After synthesis we need to again check if the functionality is maintained, for that we perform the GLS. We put the netlist under test and use the same test bench that we did for RTL design to check the functionality. GLS also ensures the timing of the design.
 We run the below command for GLS
 
