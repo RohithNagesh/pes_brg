@@ -38,7 +38,8 @@ gtkwave pes_brg_out.vcd
 
 When the project is run, we get the following output which is shown with the help of GTKwave. 
 
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/fbc9d960-6638-4442-9519-cb7d10aada29)
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/329b7fb2-bfc5-4fe9-9a22-52693520099d)
+
 <p align="center">
   Fig 2. Simulation result for different Baud Rate
 </p>
@@ -64,19 +65,20 @@ Yosys can be adapted to perform any synthesis job by combining the existing pass
   abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
   flatten
   write_verilog -noattr pes_brg_netlist.v
+  stat
   show
   ```
   On running the above command we get the statistics about number of gates that are used, Logic realized using standard cells and also the netlist.
 
 **Statistics**
 <p align="center">
-  <img src="https://github.com/RohithNagesh/pes_brg/assets/103078929/6f0ad7ea-7e2a-4373-9f36-11048acba062"><br>
+  <img src="https://github.com/RohithNagesh/pes_brg/assets/103078929/c58552b0-48d9-4b33-9bf1-a3be4cd9ca6c"><br>
   Fig 3. Statistics 
 </p>
 
 **Logic realized**
 <p align="center">
-  <img src="https://github.com/RohithNagesh/pes_brg/assets/103078929/03de3ec1-506c-4230-848b-407a0f4e106b"><br>
+  <img src="https://github.com/RohithNagesh/pes_brg/assets/103078929/8b175915-b70e-41c1-af8e-84a4f8c9c6d1"><br>
   Fig 4. Logic Synthesis
 </p>
 
@@ -85,10 +87,11 @@ GLS stands for Gate level Simulation. when we make an RTL design we test it with
 We run the below command for GLS
 
 ```
-iverilog iiitb_brg/Verilog_Model/primitives.v iiitb_brg/Verilog_Model/sky130_fd_sc_hd.v pes_brg_net.v pes_brg_tb.v
+iverilog iiitb_brg/Verilog_Model/primitives.v iiitb_brg/Verilog_Model/sky130_fd_sc_hd.v pes_brg_netlist.v pes_brg_tb.v
 ./a.out
 gtkwave iiitb_brg_out.vcd
 ```
+
 <p align="center">
   Fig 5. GLS Waveform
 </p>
