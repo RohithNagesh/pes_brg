@@ -64,7 +64,7 @@ Yosys can be adapted to perform any synthesis job by combining the existing pass
   dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
   abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
   flatten
-  write_verilog -noattr pes_brg_netlist.v
+  write_verilog -noattr pes_brg_net.v
   stat
   show
   ```
@@ -87,10 +87,11 @@ GLS stands for Gate level Simulation. when we make an RTL design we test it with
 We run the below command for GLS
 
 ```
-iverilog iiitb_brg/Verilog_Model/primitives.v iiitb_brg/Verilog_Model/sky130_fd_sc_hd.v pes_brg_netlist.v pes_brg_tb.v
+iverilog iiitb_brg/Verilog_Model/primitives.v iiitb_brg/Verilog_Model/sky130_fd_sc_hd.v pes_brg_net.v pes_brg_tb.v
 ./a.out
 gtkwave iiitb_brg_out.vcd
 ```
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/0b6facad-2a90-4f3b-b780-b07134903be9)
 
 <p align="center">
   Fig 5. GLS Waveform
