@@ -5,6 +5,7 @@
 - [Functional Simulation](#functional-simulation)
 - [Synthesis](#synthesis)
 - [Gate Level Simulation](#gate-level-simulation)
+- [Physical Design](#physical-design)
 
 ## Introduction
 The Baud rate generator is nothing but a frequency divider. It helps two devices in communicating with each other. When data is sent from transmitter to receiver then the data at the receiver side is sampled at a particular baud rate. If there is a high mismatch between the baud rate of transmitter and receiver then the sampling will not happen at the centre of the bit period and there will be an offset. Due to the offset, there will be information that will be missed and communication will not occur efficiently. For example, if transmitter transmit at a particular rate and the receiving device only expects half of that data rate then half of the information will be lost.
@@ -96,3 +97,5 @@ gtkwave iiitb_brg_out.vcd
 <p align="center">
   Fig 5. GLS Waveform
 </p>
+
+## Physical Design
