@@ -99,6 +99,10 @@ gtkwave iiitb_brg_out.vcd
 </p>
 
 ## Physical Design
+Physical design means --->> netlist (.v ) converted into GDSII form(layout form)
+logical connectivity of cells converted into physical connectivity.
+During physical design, all design components are instantiated with their geometric representations. In other words, all macros, cells, gates, transistors, etc., with fixed shapes and sizes per fabrication layer, are assigned spatial locations (placement) and have appropriate routing connections (routing) completed in metal layers.
+
 ### OpenLANE
 OpenLANE is an opensource tool or flow used for opensource tape-outs. The OpenLANE flow comprises a variety of tools such as Yosys, ABC, OpenSTA, Fault, OpenROAD app, Netgen and Magic which are used to harden chips and macros, i.e. generate final GDSII from the design RTL. The primary goal of OpenLANE is to produce clean GDSII with no human intervention. OpenLANE has been tuned to function for the Google-Skywater130 Opensource Process Design Kit.
 
@@ -106,7 +110,62 @@ OpenLANE is an opensource tool or flow used for opensource tape-outs. The OpenLA
 
 refer below link for OpenLANE installation:
 
-(https://openlane.readthedocs.io/en/latest/)
+https://openlane.readthedocs.io/en/latest/
 
 ### Magic
 Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
+
+#### Software setup
+#### system requirements
+Run the below commands to check the system requirements
+```
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+```
+Now, We can use the following command to download magic
+```
+git clone https://github.com/RTimothyEdwards/magic
+```
+The we use the below commands to install magic
+```
+cd magic/
+./configure
+sudo make
+sudo make install
+```
+### Making Config file for running OpenLane
+We make a file named as config.tcl, which is used to configure OpenLane for our project
+``` tcl
+# Design
+set ::env(DESIGN_NAME) "pes_brg"
+
+set ::env(VERILOG_FILES) "./designs/pes_brg/src/pes_brg.v"
+
+set ::env(CLOCK_PERIOD) "5.000"
+set ::env(CLOCK_PORT) "clk"
+
+
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+
+set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/pes_brg/src/sky130_fd_sc_hd__typical.lib"
+set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/pes_brg/src/sky130_fd_sc_hd__fast.lib"
+set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/pes_brg/src/sky130_fd_sc_hd__slow.lib"
+set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/pes_brg/src/sky130_fd_sc_hd__typical.lib"
+
+set filename $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
+if { [file exists $filename] == 1} {
+	source $filename
+}
+```
+We make a folder inside openlane->design with the name `pes_brg`. Inside this folder we put the above `config.tcl` file and also make one more folder names as `src` which contains the source file and libraries required for synthesis. 
+
+### Design Preparation Step
+To invoke OpenLane
+
+We are going to prepare the design prep -design pes_brg
