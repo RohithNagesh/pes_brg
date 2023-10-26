@@ -168,4 +168,26 @@ We make a folder inside openlane->design with the name `pes_brg`. Inside this fo
 ### Design Preparation Step
 To invoke OpenLane
 
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/ac31afe3-7fd1-4de8-adcd-5692d4906c5b)
+
 We are going to prepare the design prep -design pes_brg
+
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/0931a088-12f6-4346-ba4b-2e6a48a1e735)
+
+### Synthesis
+After Design Preparation, we will run the Synthesis:
+- `run_synthesis` command use to run the synthesis
+- Yosys-Perform RTL Simulation abc-It performs technology mapping and the netlist is created. Open STA-Perform static timing analysis after synthesis.
+- This will execute both yosys and abc pass will be done
+
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/ab7d5c97-d3ed-4f96-b463-c7f368d889df)
+
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/5aa1a599-6543-41af-a792-a0cb8c4738ea)
+
+### Floorplan
+`run_floorplan` command use to run the floorplan
+
+#### Review Floorplan Layout in Magic
+```
+magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read pes_brg.floorplan.def &
+```
