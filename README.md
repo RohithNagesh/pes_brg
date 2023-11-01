@@ -128,7 +128,10 @@ We make a file named as config.tcl, which is used to configure OpenLane for our 
     "DESIGN_IS_CORE": true
 }
 ```
-We make a folder inside OpenLane->openlane with the name `pes_brg`. Inside this folder we put the above `config.json` file and also make one more folder names as `src` which contains the source file.We paste the pes_brg.v file in the source file. Now we go into the OpenLane folder and run the following command to automate the whole ASIC flow.
+We make a folder inside OpenLane->openlane with the name `pes_brg`. Inside this folder we put the above `config.json` file and also make one more folder names as `src` which contains the source file.We paste the pes_brg.v file in the source file. 
+
+### Automate the whole ASIC flow
+Now we go into the OpenLane folder and run the following command to automate the whole ASIC flow.
 ```
 sudo make mount
 ./flow.tcl -design openlane/pes_brg -tag RUN
