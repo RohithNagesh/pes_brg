@@ -1,0 +1,11 @@
+{
+    "DESIGN_NAME": "pes_brg",
+    "VERILOG_FILES": "dir::src/pes_brg.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 2.1,
+    "SYNTH_STRATEGY": "DELAY 0",
+    "CELL_SIZING": 1,
+    "DIE_AREA": "0 0 50 50",
+    "CORE_AREA": "5.52 10.88 42 47",
+    "DESIGN_IS_CORE": true
+}
