@@ -112,82 +112,26 @@ refer below link for OpenLANE installation:
 
 https://openlane.readthedocs.io/en/latest/
 
-### Magic
-Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
 
-#### Software setup
-#### system requirements
-Run the below commands to check the system requirements
-```
-sudo apt-get install m4
-sudo apt-get install tcsh
-sudo apt-get install csh
-sudo apt-get install libx11-dev
-sudo apt-get install tcl-dev tk-dev
-sudo apt-get install libcairo2-dev
-sudo apt-get install mesa-common-dev libglu1-mesa-dev
-sudo apt-get install libncurses-dev
-```
-Now, We can use the following command to download magic
-```
-git clone https://github.com/RTimothyEdwards/magic
-```
-The we use the below commands to install magic
-```
-cd magic/
-./configure
-sudo make
-sudo make install
-```
 ### Making Config file for running OpenLane
 We make a file named as config.tcl, which is used to configure OpenLane for our project
-``` tcl
-# Design
-set ::env(DESIGN_NAME) "pes_brg"
-
-set ::env(VERILOG_FILES) "./designs/pes_brg/src/pes_brg.v"
-
-set ::env(CLOCK_PERIOD) "5.000"
-set ::env(CLOCK_PORT) "clk"
-
-
-set ::env(CLOCK_NET) $::env(CLOCK_PORT)
-
-set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/pes_brg/src/sky130_fd_sc_hd__typical.lib"
-set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/pes_brg/src/sky130_fd_sc_hd__fast.lib"
-set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/pes_brg/src/sky130_fd_sc_hd__slow.lib"
-set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/pes_brg/src/sky130_fd_sc_hd__typical.lib"
-
-set filename $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
-if { [file exists $filename] == 1} {
-	source $filename
+``` json
+{
+    "DESIGN_NAME": "pes_brg",
+    "VERILOG_FILES": "dir::src/pes_brg.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 2.1,
+    "SYNTH_STRATEGY": "DELAY 0",
+    "CELL_SIZING": 1,
+    "CORE_AREA": "5.52 10.88 42 47",
+    "FP_CORE_UTIL": 0.75,
+    "DESIGN_IS_CORE": true
 }
 ```
-We make a folder inside openlane->design with the name `pes_brg`. Inside this folder we put the above `config.tcl` file and also make one more folder names as `src` which contains the source file and libraries required for synthesis. 
-
-### Design Preparation Step
-To invoke OpenLane
-
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/ac31afe3-7fd1-4de8-adcd-5692d4906c5b)
-
-We are going to prepare the design prep -design pes_brg
-
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/0931a088-12f6-4346-ba4b-2e6a48a1e735)
-
-### Synthesis
-After Design Preparation, we will run the Synthesis:
-- `run_synthesis` command use to run the synthesis
-- Yosys-Perform RTL Simulation abc-It performs technology mapping and the netlist is created. Open STA-Perform static timing analysis after synthesis.
-- This will execute both yosys and abc pass will be done
-
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/ab7d5c97-d3ed-4f96-b463-c7f368d889df)
-
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/5aa1a599-6543-41af-a792-a0cb8c4738ea)
-
-### Floorplan
-`run_floorplan` command use to run the floorplan
-
-#### Review Floorplan Layout in Magic
+We make a folder inside OpenLane->openlane with the name `pes_brg`. Inside this folder we put the above `config.json` file and also make one more folder names as `src` which contains the source file.We paste the pes_brg.v file in the source file. Now we go into the OpenLane folder and run the following command to automate the whole ASIC flow.
 ```
-magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read pes_brg.floorplan.def &
+sudo make mount
+./flow.tcl -design openlane/pes_brg -tag RUN
 ```
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/192e9c4f-fd5b-466a-90a9-76394cd87a17)
+
