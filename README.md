@@ -88,9 +88,9 @@ GLS stands for Gate level Simulation. when we make an RTL design we test it with
 We run the below command for GLS
 
 ```
-iverilog iiitb_brg/Verilog_Model/primitives.v iiitb_brg/Verilog_Model/sky130_fd_sc_hd.v pes_brg_net.v pes_brg_tb.v
+iverilog pes_brg/verilog_model/primitives.v pes_brg/verilog_model/sky130_fd_sc_hd.v pes_brg_net.v pes_brg_tb.v
 ./a.out
-gtkwave iiitb_brg_out.vcd
+gtkwave pes_brg_out.vcd
 ```
 ![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/0b6facad-2a90-4f3b-b780-b07134903be9)
 
@@ -123,8 +123,8 @@ We make a file named as config.tcl, which is used to configure OpenLane for our 
     "CLOCK_PERIOD": 2.1,
     "SYNTH_STRATEGY": "DELAY 0",
     "CELL_SIZING": 1,
+    "DIE_AREA": "0 0 50 50",
     "CORE_AREA": "5.52 10.88 42 47",
-    "FP_CORE_UTIL": 0.75,
     "DESIGN_IS_CORE": true
 }
 ```
