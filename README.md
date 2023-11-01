@@ -138,3 +138,7 @@ sudo make mount
 ```
 ![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/192e9c4f-fd5b-466a-90a9-76394cd87a17)
 
+To view the final layout we use magic and run the following command after opening terminal in openlane->design->pes_brg->runs->RUN->results->routing
+
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/fd2d1450-b3f4-4785-8dd4-075591d14178)
+
