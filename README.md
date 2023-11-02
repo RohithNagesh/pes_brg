@@ -6,6 +6,7 @@
 - [Synthesis](#synthesis)
 - [Gate Level Simulation](#gate-level-simulation)
 - [Physical Design](#physical-design)
+- [KLayout](#KLayout)
 
 ## Introduction
 The Baud rate generator is nothing but a frequency divider. It helps two devices in communicating with each other. When data is sent from transmitter to receiver then the data at the receiver side is sampled at a particular baud rate. If there is a high mismatch between the baud rate of transmitter and receiver then the sampling will not happen at the centre of the bit period and there will be an offset. Due to the offset, there will be information that will be missed and communication will not occur efficiently. For example, if transmitter transmit at a particular rate and the receiving device only expects half of that data rate then half of the information will be lost.
@@ -161,4 +162,16 @@ magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/l
 ```
 ![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/f4c8b528-efaa-41e8-8bdb-f7d9f144d285)
 
+## KLayout
+Open the final layout using KLayout. This will open the window of KLayout in editing mode `-e` with sky130 technology.
+
+```
+make mount
+
+# Open the pes_brg.gds using KLayout with sky130 PDK
+klayout -e -nn $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyt    -l $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyp    ./openlane/pes_brg/runs/RUN/results/final/gds/pes_brg.gds
+
+```
+
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/dbe23bd8-fe4f-4af6-ab4c-f17af2211c59)
 
