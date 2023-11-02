@@ -138,7 +138,27 @@ sudo make mount
 ```
 ![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/192e9c4f-fd5b-466a-90a9-76394cd87a17)
 
-To view the final layout we use magic and run the following command after opening terminal in openlane->design->pes_brg->runs->RUN->results->routing
+### foorplan layout
+OpenLane->openlane->pes_brg->runs->RUN->results->floorplan
+```
+magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_brg.def
+```
 
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/fd2d1450-b3f4-4785-8dd4-075591d14178)
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/bd8315b0-2394-4049-bc5e-aae4cf03cd45)
+
+### placement layout
+OpenLane->openlane->pes_brg->runs->RUN->results->placement
+```
+magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_brg.def
+```
+
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/7c166875-f79e-4a63-bb34-7d0e01056ecd)
+
+### routing layout
+OpenLane->openlane->pes_brg->runs->RUN->results->routing
+```
+magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_brg.def
+```
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/f4c8b528-efaa-41e8-8bdb-f7d9f144d285)
+
 
