@@ -51,7 +51,7 @@ The software used to run gate level simulation is yosys.
 ### Yosys
 **Yosys** is a framework for RTL synthesis tools. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains.
 Yosys can be adapted to perform any synthesis job by combining the existing passes (algorithms) using synthesis scripts and adding additional passes as needed by extending the yosys C++ code base.
-### Installing Yosys
+### Yosys installation
 1. Download yosys.sh from the repo
 2. Open terminal and go to the directory where yosys.sh is present
 3. run the commands `chmod +x yosys.sh` `./yosys.sh`
@@ -107,7 +107,7 @@ During physical design, all design components are instantiated with their geomet
 ### OpenLANE
 OpenLANE is an opensource tool or flow used for opensource tape-outs. The OpenLANE flow comprises a variety of tools such as Yosys, ABC, OpenSTA, Fault, OpenROAD app, Netgen and Magic which are used to harden chips and macros, i.e. generate final GDSII from the design RTL. The primary goal of OpenLANE is to produce clean GDSII with no human intervention. OpenLANE has been tuned to function for the Google-Skywater130 Opensource Process Design Kit.
 
-#### Software setup
+#### OpenLane installation
 
 refer below link for OpenLANE installation:
 
@@ -163,14 +163,22 @@ magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/l
 ![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/f4c8b528-efaa-41e8-8bdb-f7d9f144d285)
 
 ## KLayout
-Open the final layout using KLayout. This will open the window of KLayout in editing mode `-e` with sky130 technology.
+KLayout is a free computer-aided design (CAD) software for chip design engineers. It's used to edit designs or layouts for photolithography, electron beam lithography, or any fabrication process that uses the GDSII graphic design system format.
+
+### Klayout installation 
+```
+sudo apt update
+sudo apt install klayout
+```
+
+**Open the final layout using KLayout. This will open the window of KLayout in editing mode `-e` with sky130 technology.**
 
 ```
+# Enter a Docker session
 make mount
 
 # Open the pes_brg.gds using KLayout with sky130 PDK
 klayout -e -nn $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyt    -l $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyp    ./openlane/pes_brg/runs/RUN/results/final/gds/pes_brg.gds
-
 ```
 
 ![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/dbe23bd8-fe4f-4af6-ab4c-f17af2211c59)
