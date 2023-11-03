@@ -6,6 +6,7 @@
 - [Synthesis](#synthesis)
 - [Gate Level Simulation](#gate-level-simulation)
 - [Physical Design](#physical-design)
+- [Results](#Results)
 - [KLayout](#KLayout)
 
 ## Introduction
@@ -171,7 +172,35 @@ OpenLane->openlane->pes_brg->runs->RUN->results->routing
 ```
 magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_brg.def
 ```
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/f4c8b528-efaa-41e8-8bdb-f7d9f144d285)
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/f4c8b528-efaa-41e8-8bdb-f7d9f144d285)119
+
+## Results
+### Gate Count and Flop Ratio
+<p align="center">
+<img alt="image" src= "https://github.com/RohithNagesh/pes_brg/assets/103078929/10d9edda-41be-44bc-8320-7922fe30102c">
+<img alt="image" src= "https://github.com/RohithNagesh/pes_brg/assets/103078929/85b89845-ef9a-4c33-9c7b-93161c48a268">
+</p>
+
++ Number of cells = 119
++ Flop ratio = 16/119 = 0.1344537815
+
+### Power Performance
+<p align="center">
+<img alt="image" src= "https://github.com/RohithNagesh/pes_brg/assets/103078929/c91cc9e1-77be-4dce-b392-44d80b4e8e31">
+</p>
+
++ Total power = 1.16e-03 Watts
+
+### Performance
+<p align="center">
+<img alt="image" src= "https://github.com/RohithNagesh/pes_brg/assets/103078929/bece5da6-bbbe-4892-9469-06d1eec2e310">
+</p>
+
++ Performance = 1/(clock period-slack) = 1/(10-0.33)ps = 103.41GHz
+
+### Area
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/7aa362e2-7d8e-4593-9f14-82d32250e5b3)
++ Area = 2942.57 um^2
 
 ## KLayout
 KLayout is a free computer-aided design (CAD) software for chip design engineers. It's used to edit designs or layouts for photolithography, electron beam lithography, or any fabrication process that uses the GDSII graphic design system format.
@@ -189,8 +218,8 @@ sudo apt install klayout
 make mount
 
 # Open the pes_brg.gds using KLayout with sky130 PDK
-klayout -e -nn $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyt    -l $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyp    ./openlane/pes_brg/runs/RUN/results/final/gds/pes_brg.gds
+klayout -e -nn $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyt    -l $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyp    ./openlane/pes_brg/runs/RUN/results/signoff/pes_brg.klayout.gds
 ```
 
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/dbe23bd8-fe4f-4af6-ab4c-f17af2211c59)
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/f276b250-6620-40e8-8c7e-6185da1e8e12)
 
