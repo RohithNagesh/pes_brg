@@ -159,7 +159,7 @@ OpenLane->openlane->pes_brg->runs->RUN->results->floorplan
 magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_brg.def
 ```
 
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/bd8315b0-2394-4049-bc5e-aae4cf03cd45)
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/3519db2c-03e0-4c0f-bf35-bbf5000e4add)
 
 ### placement layout
 OpenLane->openlane->pes_brg->runs->RUN->results->placement
@@ -167,14 +167,14 @@ OpenLane->openlane->pes_brg->runs->RUN->results->placement
 magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_brg.def
 ```
 
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/7c166875-f79e-4a63-bb34-7d0e01056ecd)
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/541faff5-612f-48b7-91ea-dabc81b29288)
 
 ### routing layout
 OpenLane->openlane->pes_brg->runs->RUN->results->routing
 ```
 magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_brg.def
 ```
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/f4c8b528-efaa-41e8-8bdb-f7d9f144d285)119
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/5f8f5f1c-b3ef-4838-b557-b02ddbb3b7cf)
 
 ## Results
 ### Gate Count and Flop Ratio
@@ -188,7 +188,7 @@ magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/l
 
 ### Power Performance
 <p align="center">
-<img alt="image" src= "https://github.com/RohithNagesh/pes_brg/assets/103078929/67669422-7f91-404f-bc69-2ff00b36233d">
+<img alt="image" src= "https://github.com/RohithNagesh/pes_brg/assets/103078929/43c3338d-d69c-4025-bbcc-155c42664adc">
 </p>
 
 + Total power = 1.16e-03 Watts
@@ -220,8 +220,8 @@ sudo apt install klayout
 make mount
 
 # Open the pes_brg.gds using KLayout with sky130 PDK
-klayout -e -nn $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyt    -l $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyp    ./openlane/pes_brg/runs/RUN/results/signoff/pes_brg.klayout.gds
+klayout -e -nn $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyt    -l $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyp    ./openlane/pes_brg/runs/RUN/results/final/gds/pes_brg.gds
 ```
 
-![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/f276b250-6620-40e8-8c7e-6185da1e8e12)
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/514affee-0070-46ea-b21c-375485ebb9ef)
 
