@@ -112,10 +112,22 @@ OpenLANE is an opensource tool or flow used for opensource tape-outs. The OpenLA
 refer below link for OpenLANE installation:
 
 https://openlane.readthedocs.io/en/latest/
+### Making Design folder in OpenLane
+running the below commands would create folder `pes_brg` and default `config.json` inside `pes_brg` folder
+```
+cd
+cd Openlane
+make mount
+./flow.tcl -design pes_brg -init_design_config
+```
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/70b50e8c-98b9-44e4-8e8c-ccb1d9aacf46)
 
+Now make one more folder inside `pes_brg` named as `src` which contains the source file.
 
-### Making Config file for running OpenLane
-We make a file named as config.tcl, which is used to configure OpenLane for our project
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/dc75cac4-1278-460d-a2d4-8f433f143755)
+
+### Editing Config file for running OpenLane
+Insert design path in config.json and add few more configuration variables in config file
 ``` json
 {
     "DESIGN_NAME": "pes_brg",
@@ -129,7 +141,6 @@ We make a file named as config.tcl, which is used to configure OpenLane for our 
     "DESIGN_IS_CORE": true
 }
 ```
-We make a folder inside OpenLane->openlane with the name `pes_brg`. Inside this folder we put the above `config.json` file and also make one more folder names as `src` which contains the source file.We paste the pes_brg.v file in the source file. 
 
 ### Automate the whole ASIC flow
 Now we go into the OpenLane folder and run the following command to automate the whole ASIC flow.
