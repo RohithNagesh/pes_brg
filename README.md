@@ -137,8 +137,10 @@ Insert design path in config.json and add few more configuration variables in co
     "CLOCK_PERIOD": 2.1,
     "SYNTH_STRATEGY": "DELAY 0",
     "CELL_SIZING": 1,
-    "DIE_AREA": "0 0 50 50",
-    "CORE_AREA": "5.52 10.88 42 47",
+    "PL_TARGET_DENSITY": 0.9,
+    "FP_CORE_UTIL": 75,
+    "DIE_AREA": "0 0 100 100",
+    "CORE_AREA": "5 5 60 60",
     "DESIGN_IS_CORE": true
 }
 ```
@@ -186,7 +188,7 @@ magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/l
 
 ### Power Performance
 <p align="center">
-<img alt="image" src= "https://github.com/RohithNagesh/pes_brg/assets/103078929/c91cc9e1-77be-4dce-b392-44d80b4e8e31">
+<img alt="image" src= "https://github.com/RohithNagesh/pes_brg/assets/103078929/67669422-7f91-404f-bc69-2ff00b36233d">
 </p>
 
 + Total power = 1.16e-03 Watts
