@@ -5,7 +5,9 @@
     "CLOCK_PERIOD": 2.1,
     "SYNTH_STRATEGY": "DELAY 0",
     "CELL_SIZING": 1,
-    "DIE_AREA": "0 0 50 50",
-    "CORE_AREA": "5.52 10.88 42 47",
+    "PL_TARGET_DENSITY": 0.9,
+    "FP_CORE_UTIL": 75,
+    "DIE_AREA": "0 0 100 100",
+    "CORE_AREA": "5 5 60 60",
     "DESIGN_IS_CORE": true
 }
