@@ -1,0 +1,19 @@
+Design Name: pes_brg
+Run Directory: /openlane/openlane/pes_brg/runs/RUN
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/openlane/pes_brg/runs/RUN/logs/signoff/41-pes_brg.lef.lvs.log
+Number of nets: 146                        |Number of nets: 146                        
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/openlane/pes_brg/runs/RUN/logs/signoff/43-arc.log
+Pin violations: 0
+Net violations: 0

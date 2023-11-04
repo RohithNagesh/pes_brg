@@ -1,0 +1,26 @@
+
+47. Printing statistics.
+
+=== pes_brg ===
+
+   Number of wires:                 97
+   Number of wire bits:            126
+   Number of public wires:           8
+   Number of public wire bits:      20
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                113
+     $_ANDNOT_                      31
+     $_AND_                          7
+     $_DFFE_PP_                      6
+     $_MUX_                          8
+     $_NAND_                         4
+     $_NOR_                          5
+     $_NOT_                          6
+     $_ORNOT_                       10
+     $_OR_                          15
+     $_SDFFCE_PP0P_                 10
+     $_XNOR_                         1
+     $_XOR_                         10
+
