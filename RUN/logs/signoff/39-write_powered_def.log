@@ -1,0 +1,21 @@
+OpenROAD 0a584d123190322b0725d5440c2c486d91d3afd8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /openlane/openlane/pes_brg/runs/RUN/tmp/merged.nom.lef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0225]     Created 442 library cells
+[INFO ODB-0226] Finished LEF file:  /openlane/openlane/pes_brg/runs/RUN/tmp/merged.nom.lef
+[INFO ODB-0127] Reading DEF file: /openlane/openlane/pes_brg/runs/RUN/results/routing/pes_brg.def
+[INFO ODB-0128] Design: pes_brg
+[INFO ODB-0130]     Created 7 pins.
+[INFO ODB-0131]     Created 262 components and 1495 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 998 connections.
+[INFO ODB-0133]     Created 144 nets and 497 connections.
+[INFO ODB-0134] Finished DEF file: /openlane/openlane/pes_brg/runs/RUN/results/routing/pes_brg.def
+Top-level design name: pes_brg
+Found default power net 'VPWR'
+Found default ground net 'VGND'
+Found 1 power ports.
+Found 1 ground ports.
+Modified power connections of 262/262 cells.
