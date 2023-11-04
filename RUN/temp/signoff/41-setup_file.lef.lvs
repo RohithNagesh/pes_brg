@@ -1,0 +1,1 @@
+lvs {/openlane/openlane/pes_brg/runs/RUN/results/signoff/pes_brg.spice pes_brg} {/openlane/openlane/pes_brg/runs/RUN/tmp/signoff/38-pes_brg.pnl.v pes_brg} /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl /openlane/openlane/pes_brg/runs/RUN/logs/signoff/41-pes_brg.lef.lvs.log -json
