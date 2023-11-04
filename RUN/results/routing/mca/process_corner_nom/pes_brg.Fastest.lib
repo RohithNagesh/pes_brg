@@ -1,0 +1,166 @@
+library (pes_brg) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1A";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : 100.0;
+  nom_voltage                    : 1.60;
+
+  lu_table_template(template_1) {
+    variable_1 : total_output_net_capacitance;
+    index_1 ("0.00050,  0.00166,  0.00553,  0.01838,  0.06111,  0.20321,  0.67567");
+  }
+  type ("sel") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 2;
+    bit_from : 1;
+    bit_to : 0;
+  }
+
+  cell ("pes_brg") {
+    interface_timing : true;
+    pin("clk") {
+      direction : input;
+      clock : true;
+      capacitance : 0.0144;
+      timing() {
+        timing_sense : positive_unate;
+        timing_type : min_clock_tree_path;
+	cell_rise(scalar) {
+          values("0.21337");
+	}
+	cell_fall(scalar) {
+          values("0.30391");
+	}
+      }
+      timing() {
+        timing_sense : positive_unate;
+        timing_type : max_clock_tree_path;
+	cell_rise(scalar) {
+          values("0.30895");
+	}
+	cell_fall(scalar) {
+          values("0.30391");
+	}
+      }
+    }
+    pin("clkout") {
+      direction : output;
+      capacitance : 0.0013;
+      timing() {
+        related_pin : "clk";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("0.95326,0.95652,0.96522,0.98756,1.05312,1.26732,1.97787");
+	}
+	rise_transition(template_1) {
+          values("0.01613,0.01856,0.02631,0.05225,0.14440,0.45861,1.50102");
+	}
+	cell_fall(template_1) {
+          values("0.87277,0.87581,0.88383,0.90250,0.94805,1.08340,1.53036");
+	}
+	fall_transition(template_1) {
+          values("0.01540,0.01758,0.02336,0.03906,0.08871,0.26652,0.86672");
+	}
+      }
+    }
+    pin("reset") {
+      direction : input;
+      capacitance : 0.0041;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.34829");
+	}
+	fall_constraint(scalar) {
+          values("-0.32111");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("0.64344");
+	}
+	fall_constraint(scalar) {
+          values("0.63978");
+	}
+      }
+    }
+    bus("sel") {
+      bus_type : sel;
+      direction : input;
+      capacitance : 0.0000;
+    pin("sel[1]") {
+      direction : input;
+      capacitance : 0.0037;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.34575");
+	}
+	fall_constraint(scalar) {
+          values("-0.35470");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("0.77642");
+	}
+	fall_constraint(scalar) {
+          values("0.76028");
+	}
+      }
+    }
+    pin("sel[0]") {
+      direction : input;
+      capacitance : 0.0052;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.31339");
+	}
+	fall_constraint(scalar) {
+          values("-0.30780");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("0.68023");
+	}
+	fall_constraint(scalar) {
+          values("0.72098");
+	}
+      }
+    }
+    }
+  }
+
+}

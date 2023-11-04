@@ -1,0 +1,101 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1699008249
+<< obsli1 >>
+rect 1104 2159 9292 10353
+<< obsm1 >>
+rect 1104 2128 9292 10384
+<< metal2 >>
+rect 5814 11802 5870 12602
+rect 5170 0 5226 800
+<< obsm2 >>
+rect 1306 11746 5758 11802
+rect 5926 11746 9082 11802
+rect 1306 856 9082 11746
+rect 1306 800 5114 856
+rect 5282 800 9082 856
+<< metal3 >>
+rect 0 9528 800 9648
+rect 0 6128 800 6248
+rect 0 5448 800 5568
+<< obsm3 >>
+rect 800 9728 9086 10369
+rect 880 9448 9086 9728
+rect 800 6328 9086 9448
+rect 880 6048 9086 6328
+rect 800 5648 9086 6048
+rect 880 5368 9086 5648
+rect 800 2143 9086 5368
+<< metal4 >>
+rect 1967 2128 2287 10384
+rect 2627 2128 2947 10384
+rect 4014 2128 4334 10384
+rect 4674 2128 4994 10384
+rect 6061 2128 6381 10384
+rect 6721 2128 7041 10384
+rect 8108 2128 8428 10384
+rect 8768 2128 9088 10384
+<< obsm4 >>
+rect 5763 4659 5829 7445
+<< metal5 >>
+rect 1056 9816 9340 10136
+rect 1056 9156 9340 9476
+rect 1056 7776 9340 8096
+rect 1056 7116 9340 7436
+rect 1056 5736 9340 6056
+rect 1056 5076 9340 5396
+rect 1056 3696 9340 4016
+rect 1056 3036 9340 3356
+<< labels >>
+rlabel metal4 s 2627 2128 2947 10384 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal4 s 4674 2128 4994 10384 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal4 s 6721 2128 7041 10384 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal4 s 8768 2128 9088 10384 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal5 s 1056 3696 9340 4016 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal5 s 1056 5736 9340 6056 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal5 s 1056 7776 9340 8096 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal5 s 1056 9816 9340 10136 6 VGND
+port 1 nsew ground bidirectional
+rlabel metal4 s 1967 2128 2287 10384 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal4 s 4014 2128 4334 10384 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal4 s 6061 2128 6381 10384 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal4 s 8108 2128 8428 10384 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal5 s 1056 3036 9340 3356 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal5 s 1056 5076 9340 5396 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal5 s 1056 7116 9340 7436 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal5 s 1056 9156 9340 9476 6 VPWR
+port 2 nsew power bidirectional
+rlabel metal3 s 0 9528 800 9648 6 clk
+port 3 nsew signal input
+rlabel metal2 s 5814 11802 5870 12602 6 clkout
+port 4 nsew signal output
+rlabel metal3 s 0 6128 800 6248 6 reset
+port 5 nsew signal input
+rlabel metal3 s 0 5448 800 5568 6 sel[0]
+port 6 nsew signal input
+rlabel metal2 s 5170 0 5226 800 6 sel[1]
+port 7 nsew signal input
+<< properties >>
+string FIXED_BBOX 0 0 10458 12602
+string LEFclass BLOCK
+string LEFview TRUE
+string GDS_END 801634
+string GDS_FILE /openlane/openlane/pes_brg/runs/RUN/results/signoff/pes_brg.magic.gds
+string GDS_START 390176
+<< end >>
+
