@@ -1,0 +1,252 @@
+Fri Nov 03 10:42:21 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /openlane/openlane/pes_brg/runs/RUN/tmp/layers.list /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef}"
+
+Fri Nov 03 10:42:21 UTC 2023 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/openlane/pes_brg/runs/RUN/tmp/merged.nom.lef -i /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Fri Nov 03 10:42:21 UTC 2023 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/openlane/pes_brg/runs/RUN/tmp/merged.min.lef -i /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Fri Nov 03 10:42:21 UTC 2023 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/openlane/pes_brg/runs/RUN/tmp/merged.max.lef -i /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Fri Nov 03 10:42:21 UTC 2023 - Executing "{python3 /openlane/scripts/mergeLib.py --output /openlane/openlane/pes_brg/runs/RUN/tmp/synthesis/merged.lib --name sky130A_merged /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Fri Nov 03 10:42:22 UTC 2023 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/openlane/pes_brg/runs/RUN/tmp/synthesis/trimmed.lib.exclude.list --output /openlane/openlane/pes_brg/runs/RUN/tmp/synthesis/trimmed.lib /openlane/openlane/pes_brg/runs/RUN/tmp/synthesis/merged.lib}"
+
+Fri Nov 03 10:42:22 UTC 2023 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/openlane/pes_brg/runs/RUN/tmp/cts/cts.lib.exclude.list --output /openlane/openlane/pes_brg/runs/RUN/tmp/cts/cts.lib /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Fri Nov 03 10:42:22 UTC 2023 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/openlane/pes_brg/runs/RUN/tmp/cts/cts-fastest.lib.exclude.list --output /openlane/openlane/pes_brg/runs/RUN/tmp/cts/cts-fastest.lib /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib}"
+
+Fri Nov 03 10:42:23 UTC 2023 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/openlane/pes_brg/runs/RUN/tmp/cts/cts-slowest.lib.exclude.list --output /openlane/openlane/pes_brg/runs/RUN/tmp/cts/cts-slowest.lib /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib}"
+
+Fri Nov 03 10:42:24 UTC 2023 - Executing "{python3 /openlane/scripts/new_tracks.py -i /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/openlane/pes_brg/runs/RUN/tmp/routing/config.tracks}"
+
+Fri Nov 03 10:42:24 UTC 2023 - Executing "{echo {OpenLane 6ab36bf20edfd4d111b7a59b21f4050622a03f5a} > /openlane/openlane/pes_brg/runs/RUN/OPENLANE_VERSION}"
+
+Fri Nov 03 10:42:24 UTC 2023 - Executing "{yosys -c /openlane/scripts/yosys/blackbox.tcl}"
+
+Fri Nov 03 10:42:24 UTC 2023 - Executing "{verilator -Wall --lint-only --Wno-DECLFILENAME --top-module pes_brg /openlane/openlane/pes_brg/runs/RUN/tmp/synthesis/blackbox/sky130_fd_sc_hd__blackbox.v /openlane/openlane/pes_brg/src/pes_brg.v -Wno-fatal --relative-includes |& tee /openlane/openlane/pes_brg/runs/RUN/logs/synthesis/linter.log /dev/null}"
+
+Fri Nov 03 10:42:24 UTC 2023 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/openlane/pes_brg/runs/RUN/tmp/synthesis/1-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib}"
+
+Fri Nov 03 10:42:24 UTC 2023 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/openlane/pes_brg/runs/RUN/tmp/synthesis/trimmed.lib > /openlane/openlane/pes_brg/runs/RUN/tmp/synthesis/1-trimmed.no_pg.lib}"
+
+Fri Nov 03 10:42:25 UTC 2023 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/synthesis/1-synthesis.log"
+
+Fri Nov 03 10:42:25 UTC 2023 - Executing "{yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/synthesis/1-synthesis.log}"
+
+Fri Nov 03 10:42:26 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/results\/synthesis\/pes_brg.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:42:26 UTC 2023 - Executing "{sed -i.bak /defparam/d /openlane/openlane/pes_brg/runs/RUN/results/synthesis/pes_brg.v}"
+
+Fri Nov 03 10:42:26 UTC 2023 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/synthesis/2-sta.log"
+
+Fri Nov 03 10:42:26 UTC 2023 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/synthesis/2-sta.log}"
+
+Fri Nov 03 10:42:26 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/floorplan/3-initial_fp.log"
+
+Fri Nov 03 10:42:26 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/floorplan/3-initial_fp.log}"
+
+Fri Nov 03 10:42:27 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/snap_to_grid.py --output /openlane/openlane/pes_brg/runs/RUN/tmp/floorplan/3-minimized_pdn.txt --input-lef /openlane/openlane/pes_brg/runs/RUN/tmp/merged.nom.lef 5.1175 5.1 10.235 10.2}"
+
+Fri Nov 03 10:42:27 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/defutil.py extract_core_dims --output-data /openlane/openlane/pes_brg/runs/RUN/tmp/dimensions.txt --input-lef /openlane/openlane/pes_brg/runs/RUN/tmp/merged.nom.lef /openlane/openlane/pes_brg/runs/RUN/tmp/floorplan/3-initial_fp.def}"
+
+Fri Nov 03 10:42:28 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/floorplan/4-io.log"
+
+Fri Nov 03 10:42:28 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/floorplan/4-io.log}"
+
+Fri Nov 03 10:42:29 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/floorplan/5-tap.log"
+
+Fri Nov 03 10:42:29 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/floorplan/5-tap.log}"
+
+Fri Nov 03 10:42:29 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/floorplan/6-pdn.log"
+
+Fri Nov 03 10:42:29 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/floorplan/6-pdn.log}"
+
+Fri Nov 03 10:42:30 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/7-global_skip_io.log"
+
+Fri Nov 03 10:42:30 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/7-global_skip_io.log}"
+
+Fri Nov 03 10:42:30 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/placement\/7-global_skip_io.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:42:31 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/8-gpl_sta.log"
+
+Fri Nov 03 10:42:31 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/8-gpl_sta.log}"
+
+Fri Nov 03 10:42:31 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/9-io.log"
+
+Fri Nov 03 10:42:31 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/9-io.log}"
+
+Fri Nov 03 10:42:32 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/10-global.log"
+
+Fri Nov 03 10:42:32 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/10-global.log}"
+
+Fri Nov 03 10:42:32 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/placement\/10-global.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:42:33 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/11-gpl_sta.log"
+
+Fri Nov 03 10:42:33 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/11-gpl_sta.log}"
+
+Fri Nov 03 10:42:33 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/resizer.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/12-resizer.log"
+
+Fri Nov 03 10:42:33 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/resizer.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/12-resizer.log}"
+
+Fri Nov 03 10:42:35 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/placement\/12-resizer.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:42:35 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/13-detailed.log"
+
+Fri Nov 03 10:42:35 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/13-detailed.log}"
+
+Fri Nov 03 10:42:36 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/results\/placement\/pes_brg.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:42:36 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/14-dpl_sta.log"
+
+Fri Nov 03 10:42:36 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/placement/14-dpl_sta.log}"
+
+Fri Nov 03 10:42:37 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/cts.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/cts/15-cts.log"
+
+Fri Nov 03 10:42:37 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/cts.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/cts/15-cts.log}"
+
+Fri Nov 03 10:43:17 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/cts/16-cts_sta.log"
+
+Fri Nov 03 10:43:17 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/cts/16-cts_sta.log}"
+
+Fri Nov 03 10:43:18 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/resizer_timing.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/cts/17-resizer.log"
+
+Fri Nov 03 10:43:18 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/resizer_timing.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/cts/17-resizer.log}"
+
+Fri Nov 03 10:43:20 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/cts\/17-pes_brg.resized.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:43:20 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/resizer_routing_design.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/18-resizer_design.log"
+
+Fri Nov 03 10:43:20 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/resizer_routing_design.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/18-resizer_design.log}"
+
+Fri Nov 03 10:43:22 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/18-pes_brg.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:43:22 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/19-rsz_design_sta.log"
+
+Fri Nov 03 10:43:22 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/19-rsz_design_sta.log}"
+
+Fri Nov 03 10:43:23 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/resizer_routing_timing.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/20-resizer_timing.log"
+
+Fri Nov 03 10:43:23 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/resizer_routing_timing.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/20-resizer_timing.log}"
+
+Fri Nov 03 10:43:25 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/20-pes_brg.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:43:25 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/21-rsz_timing_sta.log"
+
+Fri Nov 03 10:43:25 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/21-rsz_timing_sta.log}"
+
+Fri Nov 03 10:43:26 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/repair_antennas.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/22-global.log"
+
+Fri Nov 03 10:43:26 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/repair_antennas.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/22-global.log}"
+
+Fri Nov 03 10:43:27 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/write_views.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/22-global_write_netlist.log"
+
+Fri Nov 03 10:43:27 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/write_views.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/22-global_write_netlist.log}"
+
+Fri Nov 03 10:43:27 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/routing\/global.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:43:27 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/24-grt_sta.log"
+
+Fri Nov 03 10:43:27 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/24-grt_sta.log}"
+
+Fri Nov 03 10:43:28 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/fill.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/25-fill.log"
+
+Fri Nov 03 10:43:28 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/fill.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/25-fill.log}"
+
+Fri Nov 03 10:43:29 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/routing\/25-fill.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:43:29 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/droute.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/26-detailed.log"
+
+Fri Nov 03 10:43:29 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/droute.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/26-detailed.log}"
+
+Fri Nov 03 10:43:55 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/results\/routing\/pes_brg.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:43:55 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py tr to_klayout -o /openlane/openlane/pes_brg/runs/RUN/reports/routing/drt.klayout.xml --design-name pes_brg /openlane/openlane/pes_brg/runs/RUN/reports/routing/drt.drc}"
+
+Fri Nov 03 10:43:55 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/wire_lengths.py --report-out /openlane/openlane/pes_brg/runs/RUN/reports/routing/27-wire_lengths.csv --input-lef /openlane/openlane/pes_brg/runs/RUN/tmp/merged.nom.lef --output-def /dev/null --output /openlane/openlane/pes_brg/runs/RUN/results/routing/pes_brg.odb /openlane/openlane/pes_brg/runs/RUN/results/routing/pes_brg.odb |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/routing/27-wire_lengths.log}"
+
+Fri Nov 03 10:43:56 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/28-parasitics_extraction.min.log"
+
+Fri Nov 03 10:43:56 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/28-parasitics_extraction.min.log}"
+
+Fri Nov 03 10:43:57 UTC 2023 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/29-rcx_mcsta.min.log"
+
+Fri Nov 03 10:43:57 UTC 2023 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/29-rcx_mcsta.min.log}"
+
+Fri Nov 03 10:43:59 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/30-parasitics_extraction.max.log"
+
+Fri Nov 03 10:43:59 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/30-parasitics_extraction.max.log}"
+
+Fri Nov 03 10:44:00 UTC 2023 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/31-rcx_mcsta.max.log"
+
+Fri Nov 03 10:44:00 UTC 2023 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/31-rcx_mcsta.max.log}"
+
+Fri Nov 03 10:44:03 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/32-parasitics_extraction.nom.log"
+
+Fri Nov 03 10:44:03 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/rcx.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/32-parasitics_extraction.nom.log}"
+
+Fri Nov 03 10:44:03 UTC 2023 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/33-rcx_mcsta.nom.log"
+
+Fri Nov 03 10:44:03 UTC 2023 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/33-rcx_mcsta.nom.log}"
+
+Fri Nov 03 10:44:06 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/irdrop.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/34-irdrop.log"
+
+Fri Nov 03 10:44:06 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/irdrop.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/34-irdrop.log}"
+
+Fri Nov 03 10:44:07 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/35-gdsii.log"
+
+Fri Nov 03 10:44:07 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/35-gdsii.log}"
+
+Fri Nov 03 10:44:07 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/35-gds_ptrs.log"
+
+Fri Nov 03 10:44:08 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/35-gds_ptrs.log}"
+
+Fri Nov 03 10:44:08 UTC 2023 - Executing "{sed -i.bak -n {/^<< properties >>/,/^<< end >>/p} /openlane/openlane/pes_brg/runs/RUN/tmp/signoff/gds_ptrs.mag}"
+
+Fri Nov 03 10:44:08 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/35-lef.log"
+
+Fri Nov 03 10:44:08 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/35-lef.log}"
+
+Fri Nov 03 10:44:09 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/35-maglef.log"
+
+Fri Nov 03 10:44:09 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/35-maglef.log}"
+
+Fri Nov 03 10:44:09 UTC 2023 - Executing "{python3 /openlane/scripts/klayout/stream_out.py --output /openlane/openlane/pes_brg/runs/RUN/results/signoff/pes_brg.klayout.gds --lyt /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/klayout/tech/sky130A.lyt --lym /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/klayout/tech/sky130A.map --lyp /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/klayout/tech/sky130A.lyp --top pes_brg --with-gds-file /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds --input-lef /openlane/openlane/pes_brg/runs/RUN/tmp/merged.nom.lef /openlane/openlane/pes_brg/runs/RUN/results/routing/pes_brg.def |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/36-gdsii-klayout.log}"
+
+Fri Nov 03 10:44:10 UTC 2023 - Executing "{klayout -b -r /openlane/scripts/klayout/xor.drc -rd a=/openlane/openlane/pes_brg/runs/RUN/results/signoff/pes_brg.gds -rd b=/openlane/openlane/pes_brg/runs/RUN/results/signoff/pes_brg.klayout.gds -rd jobs=1 -rd rdb_out=/openlane/openlane/pes_brg/runs/RUN/reports/signoff/37-xor.xml -rd ignore=81/14 -rd rpt_out=/openlane/openlane/pes_brg/runs/RUN/reports/signoff/37-xor.rpt |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/37-xor.log}"
+
+Fri Nov 03 10:44:11 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/38-spice.log"
+
+Fri Nov 03 10:44:11 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/38-spice.log}"
+
+Fri Nov 03 10:44:12 UTC 2023 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/power_utils.py write_powered_def --output /openlane/openlane/pes_brg/runs/RUN/tmp/signoff/38-pes_brg.p.def --input-lef /openlane/openlane/pes_brg/runs/RUN/tmp/merged.nom.lef --power-port VPWR --ground-port VGND --powered-netlist {} /openlane/openlane/pes_brg/runs/RUN/results/routing/pes_brg.def |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/39-write_powered_def.log}"
+
+Fri Nov 03 10:44:12 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/write_views.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/39-write_powered_verilog.log"
+
+Fri Nov 03 10:44:12 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/write_views.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/39-write_powered_verilog.log}"
+
+Fri Nov 03 10:44:13 UTC 2023 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/openlane\/pes_brg\/runs\/RUN\/tmp\/signoff\/38-pes_brg.nl.v/} /openlane/openlane/pes_brg/runs/RUN/config.tcl}"
+
+Fri Nov 03 10:44:13 UTC 2023 - Executing "{netgen -batch source /openlane/openlane/pes_brg/runs/RUN/tmp/signoff/41-setup_file.lef.lvs |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/41-lvs.lef.log}"
+
+Fri Nov 03 10:44:13 UTC 2023 - Executing "magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/42-drc.log"
+
+Fri Nov 03 10:44:13 UTC 2023 - Executing "{magic -noconsole -dnull -rcfile /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.magicrc < /openlane/scripts/magic/wrapper.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/42-drc.log}"
+
+Fri Nov 03 10:44:15 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py magic to_tcl -o /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.tcl /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.rpt}"
+
+Fri Nov 03 10:44:15 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py magic to_tr -o /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.tr /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.rpt}"
+
+Fri Nov 03 10:44:15 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py tr to_klayout -o /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.klayout.xml --design-name pes_brg /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.tr}"
+
+Fri Nov 03 10:44:15 UTC 2023 - Executing "{python3 /openlane/scripts/drc_rosetta.py magic to_rdb -o /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.rdb /openlane/openlane/pes_brg/runs/RUN/reports/signoff/drc.rpt}"
+
+Fri Nov 03 10:44:15 UTC 2023 - Executing "openroad -exit /openlane/scripts/openroad/antenna_check.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/43-arc.log"
+
+Fri Nov 03 10:44:15 UTC 2023 - Executing "{openroad -exit /openlane/scripts/openroad/antenna_check.tcl |& tee /dev/null /openlane/openlane/pes_brg/runs/RUN/logs/signoff/43-arc.log}"
+
+Fri Nov 03 10:44:16 UTC 2023 - Executing "{python3 /openlane/scripts/extract_antenna_violators.py --output /openlane/openlane/pes_brg/runs/RUN/reports/signoff/43-antenna_violators.rpt --plain-out /openlane/openlane/pes_brg/runs/RUN/reports/signoff/43-antenna_violators_pins.txt /openlane/openlane/pes_brg/runs/RUN/logs/signoff/43-arc.log}"
+
+Fri Nov 03 10:44:16 UTC 2023 - Executing "{python3 /openlane/scripts/write_runtime.py --conclude --seconds --time-in 1699008256 {flow completed}}"
+
+Fri Nov 03 10:44:16 UTC 2023 - Executing "{python3 /openlane/scripts/generate_reports.py -d /openlane/openlane/pes_brg --design_name pes_brg --tag RUN --output_file /openlane/openlane/pes_brg/runs/RUN/reports/metrics.csv --man_report /openlane/openlane/pes_brg/runs/RUN/reports/manufacturability.rpt --run_path /openlane/openlane/pes_brg/runs/RUN}"
+
