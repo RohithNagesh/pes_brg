@@ -148,7 +148,7 @@ Insert design path in config.json and add few more configuration variables in co
 ### Automate the whole ASIC flow
 Now we go into the OpenLane folder and run the following command to automate the whole ASIC flow.
 ```
-sudo make mount
+make mount
 ./flow.tcl -design openlane/pes_brg -tag RUN
 ```
 ![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/192e9c4f-fd5b-466a-90a9-76394cd87a17)
@@ -175,6 +175,8 @@ OpenLane->openlane->pes_brg->runs->RUN->results->routing
 magic -T /home/rohith_nagesh/ASIC/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_brg.def
 ```
 ![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/5f8f5f1c-b3ef-4838-b557-b02ddbb3b7cf)
+
+![image](https://github.com/RohithNagesh/pes_brg/assets/103078929/c12531f7-0c2e-48ab-ab77-50cb044b652d)
 
 ## Results
 ### Gate Count and Flop Ratio
